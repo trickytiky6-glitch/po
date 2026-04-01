@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        /* Modern Dark Aesthetic */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
+            font-family: 'Inter', sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Overlay to enable sound */
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            cursor: pointer;
+            transition: opacity 0.5s ease;
+        }
+
+        #overlay h2 {
+            border: 1px solid white;
+            padding: 15px 30px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 300;
+            transition: 0.3s;
+        }
+
+        #overlay h2:hover {
+            background: white;
+            color: black;
+        }
+
+        /* Video Container Card */
+        .container {
+            max-width: 800px;
+            width: 90%;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+
+        video {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            display: block;
+        }
+
+        /* Text below the video */
+        .content {
+            margin-top: 25px;
+        }
+
+        h1 {
+            font-weight: 600;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            font-weight: 300;
+            color: #ccc;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="overlay" onclick="startVideo()">
+        <h2>Enter Experience</h2>
+    </div>
+
+    <div class="container">
+        <video id="myVideo" playsinline>
+            <source src="https://raw.githubusercontent.com/trickytiky6-glitch/po/main/evRSqqJH0JdblaTTRJCS%2BGBIIQ0kP15E.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="content">
+            <h1>с первым апрелем дауны</h1>
+            <p>таймас ГЕЙ-мер <br> 
+               не смешно.</p>
+        </div>
+    </div>
+
+    <script>
+        function startVideo() {
+            const video = document.getElementById('myVideo');
+            const overlay = document.getElementById('overlay');
+            
+            // Play video and hide overlay
+            video.play();
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 500);
+        }
+    </script>
+
+</body>
+</html>
